@@ -11,64 +11,6 @@ body {
 
   }
 
-
-@keyframes shoot {
-
-    0% {
-
-      transform: translateX(0) translateY(0) rotate(0deg);
-
-      opacity: 1;
-
-    }
-
-    100% {
-
-      transform: translateX(-500px) translateY(500px) rotate(45deg);
-
-      opacity: 0;
-
-    }
-
-  }
-
-
-
-  .shooting-star {
-
-    position: absolute;
-
-    width: 2px;
-
-    height: 2px;
-
-    background-color: white;
-
-    border-radius: 50%;
-
-    animation: shoot linear infinite;
-
-  }
-
-
-
-  .shooting-star::before {
-
-    content: '';
-
-    position: absolute;
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 50px;
-
-    height: 1px;
-
-    background: linear-gradient(90deg, white, transparent);
-
-  }
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -131,3 +73,132 @@ body {
   a {
     cursor: url("/assets/cursor.png") 25 25, pointer; /* Adjust as needed */
   }
+
+  .animated-gradient-text {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    max-width: fit-content;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.25rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    transition: box-shadow 0.5s ease-out;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 10px 20px;
+  }
+
+  .gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: 300% 100%;
+    animation: gradient 3s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .gradient-overlay::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    transform: translate(-50%, -50%);
+    background-color: #060606;
+    z-index: -1;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .text-content {
+    background: linear-gradient(90deg, #5b5f61, #120b2b, #b8a292);
+    background-size: 300% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient 6s linear infinite;
+  }
+
+  .particles-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+  }
+
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 7)); }
+}
+
+.slider {
+	background: rgb(0, 0, 0);
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+	height: 120px;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	width: 1000px;
+	border-radius: 10px;
+}
+
+.slider::before,
+.slider::after {
+	content: "";
+	height: 100px;
+	position: absolute;
+	width: 200px;
+	z-index: 2;
+}
+
+.slider::after {
+	right: 0;
+	top: 0;
+	transform: rotateZ(180deg);
+}
+
+.slider::before {
+	left: 0;
+	top: 0;
+}
+
+.slide-track {
+	animation: scroll 60s linear infinite;
+	display: flex;
+	width: calc(250px * 14);
+}
+
+.slide {
+	height: 100px;
+	width: 250px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.slide img {
+	height: 60px;
+	width: auto;
+	transition: transform 0.3s ease-in-out;
+}
+
+.slide img:hover {
+	transform: scale(1.1);
+}
