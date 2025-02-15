@@ -2,18 +2,18 @@
 export default function Project() {
   return (
 
-    <div className="bg-[#000000]">
+    <div className="bg-[#2e0a0a]">
     <section id="project"></section>
       <div className="container mx-auto  py-16">
-        <h2 className="mb-8  px-[34rem] font-extrabold text-white text-[6rem] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+        <h2 className="mb-8  px-[2rem] font-extrabold text-white text-[6rem] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
           PROJECT
         </h2>
-        <div className="flex flex-col items-center gap-6 p-7 md:flex-row md:gap-8 rounded-2xl bg-black ">
-          <div className="flex flex-col items-center md:items-start gap-8 bg-[#1a1a1a] p-6 rounded-lg">
+        <div className="flex flex-col items-center gap-6 p-7 md:flex-row md:gap-8 rounded-2xl  ">
+          <div className="flex flex-col items-center md:items-start gap-8 bg-[#000000] p-6 rounded-lg">
             <a href="https://github.com/Tashumii/TTS_GUI" className="text-2xl font-medium text-amber-50 hover:text-red-400 transition-colors">
               Text To Speech
             </a>
-            <span className="font-medium text-gray-700">
+            <span className="font-medium text-[#fd0a0a]">
               This project is a Python-based Text-to-Speech (TTS) Application
               that allows users to input text, listen to it spoken aloud, and
               save it as an audio file. The application features a user-friendly
@@ -27,11 +27,11 @@ export default function Project() {
               <span>2024</span>
             </span>
           </div>
-          <div className="flex flex-col items-center md:items-start gap-8 bg-[#1a1a1a] p-6 rounded-lg">
+          <div className="flex flex-col items-center md:items-start gap-8 bg-[#000000] p-6 rounded-lg">
             <span className="text-2xl font-medium text-amber-50 pt-5.5">
               Processing...
             </span>
-            <span className="font-medium text-gray-700">
+            <span className="font-medium text-[#fd0a0a]">
               "Enhancing My Portfolio" – Showcasing my skills, projects, and
               experience through continuous improvement and strategic updates to
               create a stronger professional presence.
@@ -42,11 +42,11 @@ export default function Project() {
               <span>2025</span>
             </span>
           </div>
-          <div className="flex flex-col items-center md:items-start gap-8 bg-[#1a1a1a] p-6 rounded-lg">
+          <div className="flex flex-col items-center md:items-start gap-8 bg-[#000000] p-6 rounded-lg">
             <span className="text-2xl font-medium text-amber-50">
               Planning...
             </span>
-            <span className="font-medium text-gray-700">
+            <span className="font-medium text-[#fd0a0a]">
               Planning to build a simple habit tracker that helps users log
               activities, set goals, and track progress with a clean and
               intuitive interface.
@@ -57,11 +57,11 @@ export default function Project() {
               <span></span>
             </span>
           </div>
-          <div className="flex flex-col items-center md:items-start gap-8 bg-[#1a1a1a] p-6 rounded-lg">
+          <div className="flex flex-col items-center md:items-start gap-8 bg-[#000000] p-6 rounded-lg">
             <span className="text-2xl font-medium text-amber-50">
               Too be soon...
             </span>
-            <span className="font-medium text-gray-700">
+            <span className="font-medium text-[#fd0a0a]">
               "I Want to Build a Social Media Application or AI" – A future
               project aimed at enhancing my skills and fostering collaboration,
               exploring innovative technologies to create impactful digital

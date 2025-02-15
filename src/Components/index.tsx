@@ -6,14 +6,15 @@ import Particles from "./Particles"
 export default function About() {
   return (
 
-    <div className="relative min-h-screen bg-black text-white flex items-center justify-center  px-4 ">
+    <div className="relative min-h-screen bg-[#2e0a0a] text-white flex items-center justify-center  px-4 ">
+
       {/* Floating particles Background */}
       <div className="absolute inset-0 overflow-auto h-screen">
  <Particles
      particleCount={5000}
      particleSpread={10}
      speed={0.1}
-     particleColors={["#452753"]}
+     particleColors={["#3b0e0e"]}
      moveParticlesOnHover={true}
      particleHoverFactor={1.5}
      alphaParticles={true}
@@ -28,6 +29,7 @@ export default function About() {
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-[25rem] pt-[5rem]">
           {/* Left side - Text content */}
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-[25rem] pb-[8rem]">
           <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start space-y-6 text-center lg:text-left">
              {/* Animated Gradient Text */}
              <h1 id="index" className="animated-gradient-text text-[5rem] lg:pl-[2rem]">
@@ -43,10 +45,10 @@ export default function About() {
                      </a>
                     </h1>
 
-            <p className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-wide bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent p-8">
+            <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-red-500 p-8">
               Welcome To My Portfolio
             </p>
-            <p className="text-lg sm:text-xl italic max-w-xl mx-auto lg:mx-0 text-gray-400 font-light leading-relaxed border-l-4 border-[#4190d9] pl-6 ">
+            <p className="text-lg sm:text-xl italic max-w-xl mx-auto lg:mx-0 text-red-500 font-light leading-relaxed border-l-4 border-[#000000] pl-6 ">
               "Crafting elegant solutions through clean code and innovative
               design, one project at a time."
             </p>
@@ -84,11 +86,11 @@ export default function About() {
           {/* Right side - Image */}
           <div className="w-full lg:w-1/2 flex items-center justify-center">
             <div className="relative max-w-sm md:max-w-md lg:max-w-lg">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#071e2c] to-[#2c013a8e] blur-2xl rounded-4xl bg-transparent backdrop-blur-4xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#b32727] to-[#0000008e] blur-2xl rounded-4xl bg-transparent backdrop-blur-4xl"></div>
               <img
                 src="/assets/ric.jpg"
                 alt="Profile"
-                className="relative z-10 w-full h-full object-contain rounded-lg shadow-2xl shadow-purple-950"
+                className="relative z-10 w-full h-full object-contain rounded-lg shadow-2xl shadow-[#000000]"
                 style={{
                   filter: "contrast(1.1) brightness(0.95) saturate(1.50)",
                   backgroundColor: "transparent",
@@ -98,6 +100,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      </div>
+    </div>
+</div>
   );
 }
