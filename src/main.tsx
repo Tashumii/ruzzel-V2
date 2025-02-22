@@ -12,9 +12,8 @@ createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <App />
     <Index />
+    <About />
     <Project />
     <Stack />
-    <About />
-    {/* <ComingSoon /> */}
   </React.StrictMode>
 );

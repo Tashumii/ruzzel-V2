@@ -6,72 +6,11 @@
     }
 }
 
-body {
-    cursor: url("/assets/cursor.png"),all-scroll;
-
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .page-enter {
-    animation: fadeIn 0.8s ease-out forwards;
-  }
-
-  .loader {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    background: #000;
-    z-index: 999;
-    animation: fadeOut 1s ease-in forwards 1s;
-  }
-
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-
-  .cursor-line {
-    width: 10px;
-    height: 15px; /* Line thickness */
-    background-color: rgb(100, 100, 100); /* Customize line color */
-    border-radius: none;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease-in-out, transform 0.1s;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); /* Reduce glow effect */
-    position: absolute;
-    pointer-events: none;
-    transform-origin: left center;
-    opacity: 0.5;
-    .cursor-line {
-        position: absolute;
-        height: 2px;
-        background-color: white;
-        pointer-events: none;
-        transition: opacity 0.5s ease-out;
-      }
-
-}
-
   body {
-    cursor: url("/assets/cursor.png") 25 25, auto;
+    cursor: none;
   }
   a {
-    cursor: url("/assets/cursor.png") 25 25, pointer; /* Adjust as needed */
+    cursor: none; /* Adjust as needed */
   }
 
   .animated-gradient-text {
@@ -84,7 +23,6 @@ body {
     justify-content: center;
     border-radius: 1.25rem;
     font-weight: 500;
-    backdrop-filter: blur(10px);
     transition: box-shadow 0.5s ease-out;
     overflow: hidden;
     cursor: pointer;
@@ -127,7 +65,7 @@ body {
   }
 
   .text-content {
-    background: linear-gradient(90deg, #b91f34, #750505, #e02a2a);
+    background: linear-gradient(90deg, #ffffff, #7e2a2a, #a82626);
     background-size: 300% 100%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -136,72 +74,24 @@ body {
   }
 
   .particles-container {
-    position: relative;
+    position: fixed; /* Fixes the particles in place */
     width: 100%;
     height: 100%;
-
+    z-index: 0; /* Ensures particles stay behind other content */
   }
 
-
-@keyframes scroll {
+  @keyframes pulse {
     0% {
-        transform: translateX(0);
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
     }
     100% {
-        transform: translateX(-50%); /* Move by half since it's duplicated */
+      transform: scale(1);
     }
-}
+  }
 
-.slider {
-    background: #2e0a0a;
-    height: 120px;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    width: 1000px;
-    border-radius: 10px;
-}
-
-.slider::before,
-.slider::after {
-    content: "";
-    height: 100px;
-    position: absolute;
-    width: 200px;
-    z-index: 2;
-}
-
-.slider::after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
-}
-
-.slider::before {
-    left: 0;
-    top: 0;
-}
-
-.slide-track {
-    display: flex;
-    width: calc(250px * 8 * 2); /* Double the original slides */
-    animation: scroll 80s linear infinite;
-}
-
-.slide {
-    height: 100px;
-    width: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slide img {
-    height: 60px;
-    width: auto;
-    transition: transform 0.3s ease-in-out;
-}
-
-.slide img:hover {
-    transform: scale(1.1);
-}
+  .custom-cursor {
+    animation: pulse 1.5s infinite;
+  }
