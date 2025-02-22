@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"; // Import motion from framer-motion
 import Particles from "./Particles"; // Import Particles component
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -65,10 +66,16 @@ export default function Index() {
 
       {/* Main Content */}
       <div className="container mx-auto relative z-10">
-      <section id="index"></section>
+        <section id="index"></section>
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 md:gap-16 lg:gap-20 pt-8 sm:pt-12 md:pt-16 lg:pt-20">
           {/* Left Side - Text Content */}
-          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start space-y-4 sm:space-y-6 text-center lg:text-left">
+          <motion.div
+            className="w-full lg:w-1/2 flex flex-col items-center lg:items-start space-y-4 sm:space-y-6 text-center lg:text-left"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }} // Only animate once
+          >
             <h1 className="animated-gradient-text text-3xl sm:text-4xl md:text-5xl lg:text-[5rem] lg:pl-[2rem]">
               <span className="gradient-overlay"></span>
               <a
@@ -93,7 +100,13 @@ export default function Index() {
             </p>
 
             {/* Social Media Links */}
-            <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-5 pt-4 sm:pt-6">
+            <motion.div
+              className="flex items-center justify-center lg:justify-start gap-4 sm:gap-5 pt-4 sm:pt-6"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }} // Only animate once
+            >
               <span className="text-base sm:text-lg font-medium text-gray-300">
                 Let's Connect:
               </span>
@@ -119,11 +132,17 @@ export default function Index() {
               >
                 <EmailIcon className="text-white hover:text-[#FF1A1A] text-2xl sm:text-3xl transition-colors duration-300" />
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Side - Profile Image */}
-          <div className="w-full lg:w-1/2 flex items-center justify-center">
+          <motion.div
+            className="w-full lg:w-1/2 flex items-center justify-center"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }} // Only animate once
+          >
             <div className="relative max-w-sm md:max-w-md lg:max-w-lg">
               <div className="absolute inset-0 bg-gradient-to-br from-[#000000] to-[#FF1A1A] blur-2xl rounded-4xl bg-transparent backdrop-blur-4xl"></div>
               <img
@@ -136,7 +155,7 @@ export default function Index() {
                 }}
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

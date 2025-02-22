@@ -49,7 +49,7 @@ const App = () => {
 
   return (
     <div className="bg-[#2e0a0a] text-white shadow-gray-950">
-        
+
 {/* Sticky Navigation Bar */}
 <div className="fixed  left-1/2 -translate-x-1/2 z-50 bg-black/50 backdrop-blur-md px-6 py-3 flex justify-center rounded-1xl  shadow-lg w-[1000rem]">
   <div className="flex gap-6 items-center text-white text-2xl">
