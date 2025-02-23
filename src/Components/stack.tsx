@@ -33,7 +33,7 @@ export default function Stack() {
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }} // Only animate once
+          viewport={{ once: false }} // Only animate once
         >
           <section id="stack"></section>
           <h1 className="text-4xl sm:text-6xl md:text-[6rem] font-extrabold drop-shadow-lg text-white">
@@ -52,7 +52,7 @@ export default function Stack() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }} // Only animate once
+            viewport={{ once: false }} // Only animate once
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-white">
               Frontend
@@ -73,7 +73,7 @@ export default function Stack() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }} // Only animate once
+            viewport={{ once: false }} // Only animate once
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-white">
               Backend
@@ -100,7 +100,7 @@ export default function Stack() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }} // Only animate once
+            viewport={{ once: false }} // Only animate once
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-white">
               Tools

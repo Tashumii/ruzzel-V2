@@ -1,10 +1,10 @@
-import { motion } from "framer-motion"; // Import motion from framer-motion
-import Particles from "./Particles"; // Import Particles component
+import { motion } from "framer-motion";
+import Particles from "./Particles";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
-import CustomCursor from "./CustomCursor"; // Import CustomCursor component
-import { useEffect, useState } from "react"; // Import useState and useEffect
+import CustomCursor from "./CustomCursor";
+import { useEffect, useState } from "react";
 
 export default function Index() {
   const [text, setText] = useState("");
@@ -67,14 +67,14 @@ export default function Index() {
       {/* Main Content */}
       <div className="container mx-auto relative z-10">
         <section id="index"></section>
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 md:gap-16 lg:gap-20 pt-8 sm:pt-12 md:pt-16 lg:pt-20">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 md:gap-16 lg:gap-20 ">
           {/* Left Side - Text Content */}
           <motion.div
             className="w-full lg:w-1/2 flex flex-col items-center lg:items-start space-y-4 sm:space-y-6 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }} // Only animate once
+            viewport={{ once: false }} // Only animate once
           >
             <h1 className="animated-gradient-text text-3xl sm:text-4xl md:text-5xl lg:text-[5rem] lg:pl-[2rem]">
               <span className="gradient-overlay"></span>

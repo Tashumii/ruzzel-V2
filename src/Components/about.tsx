@@ -11,7 +11,7 @@ export default function About() {
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }} // Only animate once
+          viewport={{ once: false }} // Only animate once
         >
           About Me
         </motion.h2>
@@ -22,7 +22,7 @@ export default function About() {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }} // Only animate once
+          viewport={{ once: false }} // Only animate once
         >
           <div className="flex flex-col gap-6 sm:gap-8 md:grid md:grid-cols-2">
             {/* Left Column */}
@@ -31,10 +31,10 @@ export default function About() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }} // Only animate once
+              viewport={{ once: false }} // Only animate once
             >
               <p className="font-medium text-lg sm:text-xl md:text-4xl text-[#FFFFFF] text-justify leading-relaxed max-w-[40rem]">
-                Hi! I'm a passionate developer in the making, currently learning PostgreSQL and Python while working on projects to sharpen my skills.
+                Hi! I'm a passionate developer, im currently learning PostgreSQL and Python while working on projects to sharpen my skills.
               </p>
             </motion.div>
 
@@ -44,7 +44,7 @@ export default function About() {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }} // Only animate once
+              viewport={{ once: false }} // Only animate once
             >
               <h3 className="text-2xl sm:text-3xl font-bold text-[#FF1A1A]">SCHOOL</h3>
               <div className="text-gray-300">
@@ -67,7 +67,7 @@ export default function About() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }} // Only animate once
+          viewport={{ once: false }} // Only animate once
         >
           <h2 className="text-[6rem] font-bold mb-4 text-white pb-20 pt-30">My Playlist</h2>
           <iframe

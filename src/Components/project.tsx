@@ -11,7 +11,7 @@ export default function Project() {
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }} // Only animate once
+          viewport={{ once: false }} // Only animate once
         >
           PROJECT
         </motion.h2>
@@ -24,7 +24,7 @@ export default function Project() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }} // Only animate once
+            viewport={{ once: false }} // Only animate once
           >
             <a
               href="https://github.com/Tashumii/TTS_GUI"
@@ -53,7 +53,7 @@ export default function Project() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }} // Only animate once
+            viewport={{ once: false }} // Only animate once
           >
             <span className="text-2xl font-medium text-white">Processing...</span>
             <span className="font-medium text-gray-400">
@@ -74,7 +74,7 @@ export default function Project() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }} // Only animate once
+            viewport={{ once: false }} // Only animate once
           >
             <span className="text-2xl font-medium text-white">Planning...</span>
             <span className="font-medium text-gray-400">
@@ -95,7 +95,7 @@ export default function Project() {
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             <span className="text-2xl font-medium text-white">To Be Soon...</span>
             <span className="font-medium text-gray-400">
