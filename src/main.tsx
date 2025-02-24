@@ -13,7 +13,7 @@ createRoot(document.getElementById("root")!).render(
     <App />
     <Index />
     <About />
-    <Project />
     <Stack />
+    <Project />
   </React.StrictMode>
 );

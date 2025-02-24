@@ -1,12 +1,34 @@
-import { useEffect, useRef } from "react";
-import HomeIcon from "@mui/icons-material/Home";
-import InfoIcon from "@mui/icons-material/Info";
-import LayersIcon from "@mui/icons-material/Layers";
-import WorkIcon from "@mui/icons-material/Work";
+import { useState, useEffect, useRef } from "react";
+import { FiMenu } from "react-icons/fi"; // Hamburger icon
+import { AiFillHome } from "react-icons/ai";
+import { FaInfoCircle, FaLayerGroup, FaBriefcase } from "react-icons/fa";
 
 const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [time, setTime] = useState("");
+
   const lastX = useRef<number | null>(null);
   const lastY = useRef<number | null>(null);
+
+  useEffect(() => {
+    // Update time every second
+    const updateTime = () => {
+      const now = new Date();
+      const options: Intl.DateTimeFormatOptions = {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+        timeZone: "Asia/Manila",
+      };
+      setTime(new Intl.DateTimeFormat("en-US", options).format(now));
+    };
+
+    updateTime(); // Initial call
+    const interval = setInterval(updateTime, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -49,37 +71,45 @@ const App = () => {
 
   return (
     <div className="bg-[#2e0a0a] text-white shadow-gray-950">
+      {/* Navigation Bar */}
+      <div className="fixed top-4 left-4 z-50 flex items-center justify-between w-full px-6">
+        {/* Hamburger Menu Button */}
+        <button
+          className="bg-black/50 backdrop-blur-md p-3 rounded-lg shadow-lg cursor-pointer"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <FiMenu size={40} className="text-white" />
+        </button>
 
-{/* Sticky Navigation Bar */}
-<div className="fixed  left-1/2 -translate-x-1/2 z-50 bg-black/50 backdrop-blur-md px-6 py-3 flex justify-center rounded-1xl  shadow-lg w-[1000rem]">
-  <div className="flex gap-6 items-center text-white text-2xl">
-    <a href="#index" className="group relative p-2 rounded-full hover:bg-black transition-all duration-300 transform hover:scale-125">
-      <HomeIcon sx={{ fontSize: 40 }} />
-      <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Home
-      </span>
-    </a>
-    <a href="#about" className="group relative p-2 rounded-full hover:bg-black transition-all duration-300 transform hover:scale-125">
-      <InfoIcon sx={{ fontSize: 40 }} />
-      <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        About
-      </span>
-    </a>
-    <a href="#stack" className="group relative p-2 rounded-full hover:bg-black transition-all duration-300 transform hover:scale-125">
-      <LayersIcon sx={{ fontSize: 40 }} />
-      <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Stack
-      </span>
-    </a>
-    <a href="#project" className="group relative p-2 rounded-full hover:bg-black transition-all duration-300 transform hover:scale-125">
-      <WorkIcon sx={{ fontSize: 40 }} />
-      <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Projects
-      </span>
-    </a>
-  </div>
-</div>
-</div>
+        {/* Philippine Time Display */}
+        <div className="fixed top-4 right-4 bg-black/50 backdrop-blur-md p-3 rounded-lg shadow-lg text-white text-lg">
+          {time}
+        </div>
+
+        {/* Dropdown Menu */}
+        {isOpen && (
+          <div className="absolute top-16 left-0 bg-black/80 p-4 rounded-lg shadow-lg flex flex-col gap-4 transition-all duration-300">
+            <a href="#index" className="group relative p-2 rounded-full hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 flex items-center gap-2">
+              <AiFillHome size={30} />
+              <span className="text-white text-lg">Home</span>
+            </a>
+            <a href="#about" className="group relative p-2 rounded-full hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 flex items-center gap-2">
+              <FaInfoCircle size={30} />
+              <span className="text-white text-lg">About</span>
+            </a>
+            <a href="#stack" className="group relative p-2 rounded-full hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 flex items-center gap-2">
+              <FaLayerGroup size={30} />
+              <span className="text-white text-lg">Stack</span>
+            </a>
+            <a href="#project" className="group relative p-2 rounded-full hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 flex items-center gap-2">
+              <FaBriefcase size={30} />
+              <span className="text-white text-lg">Projects</span>
+            </a>
+          </div>
+        )}
+      </div>
+    </div>
   );
-}
-      export default App;
+};
+
+export default App;

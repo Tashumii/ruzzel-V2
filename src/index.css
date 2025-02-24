@@ -8,62 +8,18 @@
 
 body {
     cursor: none;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 a {
-    cursor: none; /* Adjust as needed */
+    cursor: none; 
 }
 
-.animated-gradient-text {
-    position: relative;
-    margin: 0 auto;
-    display: flex;
-    max-width: fit-content;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-radius: 1.25rem;
-    font-weight: 500;
-    transition: box-shadow 0.5s ease-out;
-    overflow: hidden;
-    cursor: pointer;
-    padding: 10px 20px;
+button{
+    cursor: none;
 }
 
-.gradient-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: 300% 100%;
-    animation: gradient-overlay 3s linear infinite; /* Unique animation */
-    z-index: 0;
-    pointer-events: none;
-}
 
-.gradient-overlay::before {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
-    transform: translate(-50%, -50%);
-    background-color: #060606;
-    z-index: -1;
-}
-
-@keyframes gradient-overlay {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
 
 .text-content {
     background: linear-gradient(90deg, #ffffff, #7e2a2a, #a82626);
@@ -71,7 +27,7 @@ a {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    animation: gradient-text 6s linear infinite; /* Unique animation */
+    animation: gradient-text 6s linear infinite;
 }
 
 @keyframes gradient-text {
@@ -85,6 +41,7 @@ a {
         background-position: 0% 50%;
     }
 }
+
 
 .particles-container {
     position: fixed; /* Fixes the particles in place */
